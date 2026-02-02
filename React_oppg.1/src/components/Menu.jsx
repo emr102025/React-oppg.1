@@ -14,7 +14,19 @@ export default function Menu({ meny }) {
     <>
       <section className={styles.menu}>
         <ul>
-          <h1 className={styles.h1}>Menu</h1>
+          <div className={styles.decorMenu}>
+            <img
+              src="../src/assets/decor.png"
+              alt="Decor vintage in light yellow tone"
+              className={styles.decorLeft}
+            />
+            <h1 className={styles.h1}>Menu</h1>
+            <img
+              src="../src/assets/decor.png"
+              alt="Decor vintage in light yellow tone"
+              className={styles.decorRight}
+            />
+          </div>
           {sortedMenu.map((item) => (
             <Dish key={item.id} item={item} />
           ))}

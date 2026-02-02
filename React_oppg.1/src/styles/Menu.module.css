@@ -1,0 +1,26 @@
+.menu {
+  border: 2px solid black;
+  padding: 20px 100px;
+  border-radius: 0px;
+  display: grid;
+}
+
+.h1 {
+  font-family: "ephesis";
+  font-size: 4rem;
+}
+
+.decorMenu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.decorLeft,
+.decorRight {
+  max-width: 200px;
+}
+
+.decorRight {
+  transform: scaleX(-1);
+}
