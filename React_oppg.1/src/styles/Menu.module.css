@@ -1,19 +1,77 @@
-.menu {
-  border: 2px solid black;
-  padding: 20px 100px;
-  border-radius: 0px;
-  display: grid;
+:root {
+  /* Farger */
+  --color-bg-main: #696050;
+  --color-text-light: #ffffff;
+  --color-accent: #ffd874;
+  --color-accent-soft: #f1cb6a;
+  --color-border-dark: #000000;
+
+  /* Typografi */
+  --font-decorative: "ephesis", cursive;
+  --font-body: Arial, sans-serif;
+
+  /* Spacing */
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+
+  /* Border & radius */
+  --border-thick: 2px solid var(--color-accent);
+  --border-dark: 2px solid var(--color-border-dark);
+  --radius-md: 8px;
 }
 
-.h1 {
-  font-family: "ephesis";
+.menu {
+  display: grid;
+  gap: var(--space-lg);
+
+  padding: var(--space-lg) var(--space-xl);
+  background-color: var(--color-bg-main);
+  background-image: url(../assets/background.png);
+
+  color: var(--color-text-light);
+  border: var(--border-dark);
+
+  border-radius: var(--radius-md);
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+}
+
+.inner_menu {
+  border: var(--border-thick);
+  padding: 0 var(--space-xl);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.menu h1 {
+  font-family: var(--font-decorative);
   font-size: 4rem;
+  color: var(--color-accent-soft);
+}
+.menu h2 {
+  font-family: var(--font-decorative);
+  font-size: 3rem;
+  color: var(--color-accent);
+
+  text-align: left;
+}
+.h2::after {
+  content: "";
+  display: block;
+  height: 2px;
+  max-width: 100%;
+  background: var(--color-accent);
+  margin: var(--space-sm) 0 var(--space-lg);
 }
 
 .decorMenu {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: var(--space-lg);
 }
 
 .decorLeft,
@@ -23,4 +81,13 @@
 
 .decorRight {
   transform: scaleX(-1);
+}
+
+@media (max-width: 768px) {
+  .menu {
+    padding: var(--space-md);
+  }
+  .inner_menu {
+    padding: 0;
+  }
 }

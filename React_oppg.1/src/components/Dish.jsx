@@ -8,7 +8,9 @@ export default function Dish({ item }) {
         <p>{item.ingredienser}</p>
         <p className={styles.category}>{item.kategori}</p>
       </div>
-      <data value={item.price}>{item.pris}</data>
+      <data className={styles.priceInfo} value={item.price}>
+        {item.pris}
+      </data>
     </li>
   );
 }
