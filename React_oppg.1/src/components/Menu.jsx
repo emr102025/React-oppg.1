@@ -1,6 +1,6 @@
 import Dish from "./Dish";
 import styles from "../styles/Menu.module.css";
-import decor from "@/decor.png";
+import decor from "/decor.png";
 
 export default function Menu({ meny }) {
   const byCategory = ["Forrett", "Hovedrett", "Dessert"];
