@@ -1,5 +1,6 @@
 import Dish from "./Dish";
 import styles from "../styles/Menu.module.css";
+import decor from "@/decor.png";
 
 export default function Menu({ meny }) {
   const byCategory = ["Forrett", "Hovedrett", "Dessert"];
@@ -16,13 +17,13 @@ export default function Menu({ meny }) {
         <div className={styles.inner_menu}>
           <div className={styles.decorMenu}>
             <img
-              src="../src/assets/decor.png"
+              src={decor}
               alt="Decor vintage in light yellow tone"
               className={styles.decorLeft}
             />
             <h1 className={styles.h1}>Menu</h1>
             <img
-              src="../src/assets/decor.png"
+              src={decor}
               alt="Decor vintage in light yellow tone"
               className={styles.decorRight}
             />
