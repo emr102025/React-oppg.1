@@ -13,22 +13,32 @@ export default function Menu({ meny }) {
   return (
     <>
       <section className={styles.menu}>
+        <div className={styles.decorMenu}>
+          <img
+            src="../src/assets/decor.png"
+            alt="Decor vintage in light yellow tone"
+            className={styles.decorLeft}
+          />
+          <h1 className={styles.h1}>Menu</h1>
+          <img
+            src="../src/assets/decor.png"
+            alt="Decor vintage in light yellow tone"
+            className={styles.decorRight}
+          />
+        </div>
         <ul>
-          <div className={styles.decorMenu}>
-            <img
-              src="../src/assets/decor.png"
-              alt="Decor vintage in light yellow tone"
-              className={styles.decorLeft}
-            />
-            <h1 className={styles.h1}>Menu</h1>
-            <img
-              src="../src/assets/decor.png"
-              alt="Decor vintage in light yellow tone"
-              className={styles.decorRight}
-            />
-          </div>
-          {sortedMenu.map((item) => (
-            <Dish key={item.id} item={item} />
+          {sortedMenu.map((item, index) => (
+            <div key={item.id}>
+              {(index === 0 ||
+                item.kategori !== sortedMenu[index - 1].kategori) && (
+                <h2 className={styles.h2}>
+                  {item.kategori === "Forrett" && "Appetizers"}
+                  {item.kategori === "Hovedrett" && "Main Dishes"}
+                  {item.kategori === "Dessert" && "Desserts"}
+                </h2>
+              )}
+              <Dish item={item} />
+            </div>
           ))}
         </ul>
       </section>
